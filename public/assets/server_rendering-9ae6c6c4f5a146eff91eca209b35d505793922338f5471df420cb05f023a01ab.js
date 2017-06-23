@@ -20852,6 +20852,12 @@ var Records = React.createClass({
     return { records: [] };
   },
 
+  sumOfExpenses: function () {
+    return this.props.data.reduce(function (sum, x) {
+      return sum + x;
+    });
+  },
+
   render: function () {
     var records = this.props.data.map(function (record) {
       return React.createElement(Record, { date: record.date, title: record.title, amount: record.amount });
@@ -20867,7 +20873,7 @@ var Records = React.createClass({
       ),
       React.createElement(
         "table",
-        { className: "table table-bordered" },
+        { className: "table table-bordered display" },
         React.createElement(
           "thead",
           null,

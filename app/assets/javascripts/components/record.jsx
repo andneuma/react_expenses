@@ -6,11 +6,11 @@ const Record = React.createClass({
 
   render: function() {
     return (
-      <tr>
+      <tr data-id={this.props.id}>
         <td>{this.props.date}</td>
         <td>{this.props.title}</td>
         <td>{this.amountFormat(this.props.amount)}</td>
-      </tr>      
+      </tr>
     )
   }
 });
