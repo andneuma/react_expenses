@@ -29,7 +29,7 @@ var RecordForm = React.createClass({
       method: 'POST',
       success: function(data) {
         self.props.handleNewRecord(data);
-        self.setState(self.getInitialState()); // Refresh state
+        self.setState(self.getInitialState()); // Refresh form state
       }
     })
   },

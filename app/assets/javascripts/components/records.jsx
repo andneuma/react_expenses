@@ -1,29 +1,35 @@
 var Records = React.createClass({
   getInitialState: function() {
-    return ({ records: this.props.data });
+    return {records: this.props.records};
   },
 
   getDefaultProps: function() {
-    return ({ records: [] });
+    return {records: []};
   },
 
-  sumOfExpenses: function() {
-    return this.props.data.reduce(function(sum, x) {
-      return(sum + x);
-    });
+  updateRecords: function(newCollection) {
   },
 
   addRecord: function(record) {
-    this.setState({ record: this.state.records.push(record) });
+    records = this.state.records.slice();
+    records.push(record);
+    this.setState({records: newCollection});
   },
 
-  removeRecord: function(record) {
-
+  removeRecordFromList: function(record) {
+    records = this.state.records.slice();
+    index = records.indexOf(record);
+    records.splice(index, 1);
+    this.setState({records: newCollection});
   },
 
   render: function() {
-    var records = this.props.data.map(function(record) {
-      return <Record date={record.date} title={record.title} amount={record.amount} id={record.id} key={'record_' + record.id}/>
+    var records = this.state.records.map((record) => {
+      return <Record
+        record={record}
+        key={'record_' + record.id}
+        removeRecordFromList={this.removeRecordFromList}
+      />
     });
 
     return (
@@ -35,6 +41,7 @@ var Records = React.createClass({
               <th>Date</th>
               <th>Title</th>
               <th>Amount</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
