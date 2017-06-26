@@ -25,4 +25,4 @@ group :development do
 end
 
 gem 'mini_racer', platforms: :ruby
-gem 'webpacker_lite'
+gem 'webpacker'
