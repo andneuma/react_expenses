@@ -12,7 +12,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'react-rails', '~> 1.0'
+gem 'react_on_rails'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -23,3 +23,6 @@ group :development do
 
   gem 'spring'
 end
+
+gem 'mini_racer', platforms: :ruby
+gem 'webpacker_lite'
