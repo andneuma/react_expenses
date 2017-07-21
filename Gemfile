@@ -26,3 +26,6 @@ end
 
 gem 'mini_racer', platforms: :ruby
 gem 'webpacker'
+
+gem 'mini_racer', platforms: :ruby
+gem 'webpacker_lite'
